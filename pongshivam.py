@@ -9,6 +9,12 @@ wn.bgcolor("#0029B1")
 wn.setup(width=800, height=600)  
 wn.tracer(0) 
 
+pen1 = turtle.Turtle()
+pen1.goto(0, 0)
+pen1.write("Press any key to start", align="center", font=("Courier", 24, "normal"))
+keyboard.wait()  # Wait for any key press
+pen1.clear()
+
 paddle_a = turtle.Turtle()
 paddle_a.speed(0)  
 paddle_a.shape("square")  
@@ -40,8 +46,7 @@ pen.color('white')
 pen.penup()
 pen.hideturtle()
 pen.goto(0, 260)
-pen.write("Player A: 0  Player B: 0", align="center",
-           font=("Courier", 24, "normal"))
+pen.write("Player A: 0  Player B: 0", align="center", font=("Courier", 24, "normal"))
 
 def paddle_a_up():
     y = paddle_a.ycor()  # .ycor() return y coordinate
