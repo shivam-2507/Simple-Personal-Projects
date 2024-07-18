@@ -9,12 +9,6 @@ wn.bgcolor("#0029B1")
 wn.setup(width=800, height=600)  
 wn.tracer(0) 
 
-pen1 = turtle.Turtle()
-pen1.goto(0, 0)
-pen1.write("Press any key to start", align="center", font=("Courier", 24, "normal"))
-keyboard.wait()  # Wait for any key press
-pen1.clear()
-
 paddle_a = turtle.Turtle()
 paddle_a.speed(0)  
 paddle_a.shape("square")  
@@ -27,18 +21,29 @@ paddle_b = turtle.Turtle()
 paddle_b.speed(5)
 paddle_b.shape("square")
 paddle_b.color("white")
-paddle_b.shapesize(stretch_wid=5, stretch_len=1)
+paddle_b.shapesize(stretch_wid=6, stretch_len=1)
 paddle_b.penup()
 paddle_b.goto(350, 0)   
 
 ball = turtle.Turtle()
-ball.speed(0.5)
+ball.speed(0.25)
 ball.shape("square")
 ball.color("white")
 ball.penup()
 ball.goto(0, 0)
-ball.dx = 0.2
-ball.dy = 0.2
+ball.dx = 0.25
+ball.dy = 0.25
+
+#start = turtle.Turtle()
+#start.speed(0)
+#start.color('white')
+#start.penup()
+#start.hideturtle()
+#start.goto(0, 0)
+#start.write("Press Any Key to Start", align="center", font=("Courier", 24, "normal"))
+
+#start.clear()
+
 
 pen = turtle.Turtle()
 pen.speed(0)
@@ -99,7 +104,12 @@ while running:
     if ball.ycor() < -290:
         ball.sety(-290)
         ball.dy *= -1
-        
+    #pause menu
+    if keyboard.is_pressed('1'):
+        pen.clear()
+        pen.write("Paused", align="center", font=("Courier", 24, "normal"))
+        ball.dx = 0
+        ball.dy = 0    
     # Left & Right Border
     if ball.xcor() > 390:
         score_a += 1
@@ -118,11 +128,11 @@ while running:
         ball.dx *= -1
 
     # Bounce of the paddle
-    if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() - 50):
+    if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < paddle_b.ycor() + 60 and ball.ycor() > paddle_b.ycor() - 70):
         ball.setx(340)
         ball.dx *= -1
         
-    if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < paddle_a.ycor() + 40 and ball.ycor() > paddle_a.ycor() - 50):
+    if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < paddle_a.ycor() + 60 and ball.ycor() > paddle_a.ycor() - 60):
         ball.setx(-340)
         ball.dx *= -1
 
