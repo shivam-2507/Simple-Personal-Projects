@@ -118,7 +118,7 @@ while running:
         ball.sety(-290)
         ball.dy *= -1
     
-    #pause menu
+    # pause menu
     if keyboard.is_pressed('1'):
         pen.clear()
         pen.write("Paused press 2 to restart", align="center", font=("Courier", 24, "normal"))
