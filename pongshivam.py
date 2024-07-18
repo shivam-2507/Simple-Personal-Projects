@@ -35,7 +35,7 @@ wn.update()
 paddle_a = turtle.Turtle()
 paddle_a.speed(0)  
 paddle_a.shape("square")  
-paddle_a.color("#FFA500")
+paddle_a.color("white")
 paddle_a.shapesize(stretch_wid=6, stretch_len=1)
 paddle_a.penup()  
 paddle_a.goto(-350, 0)
@@ -162,4 +162,9 @@ while running:
         ball.dx *= -1
 
     if keyboard.is_pressed('esc'):
-        quit_program()   
+        quit_program()
+
+    # Debugging Print Statements
+    print(f"Ball coordinates: ({ball.xcor()}, {ball.ycor()})")
+    print(f"Paddle A coordinates: ({paddle_a.xcor()}, {paddle_a.ycor()})")
+    print(f"Paddle B coordinates: ({paddle_b.xcor()}, {paddle_b.ycor()})")   
