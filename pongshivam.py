@@ -125,7 +125,7 @@ while running:
         ball.dx = 0
         ball.dy = 0
 
-    if keyboard.is_pressed('2'):
+    if keyboard.is_pressed('p'):
         pen.clear()
         pen.write("Player A: {}  Player B: {}".format(score_a, score_b), align="center",
                   font=("Courier", 24, "normal"))
