@@ -1,5 +1,6 @@
 import turtle
-import keyboard  
+import keyboard
+import time  
 
 score_a = 0
 score_b = 0
@@ -104,12 +105,22 @@ while running:
     if ball.ycor() < -290:
         ball.sety(-290)
         ball.dy *= -1
+    
     #pause menu
     if keyboard.is_pressed('1'):
         pen.clear()
-        pen.write("Paused", align="center", font=("Courier", 24, "normal"))
+        pen.write("Paused press 2 to restart", align="center", font=("Courier", 24, "normal"))
         ball.dx = 0
-        ball.dy = 0    
+        ball.dy = 0
+
+    if keyboard.is_pressed('2'):
+        pen.clear()
+        pen.write("Player A: {}  Player B: {}".format(score_a, score_b), align="center",
+                  font=("Courier", 24, "normal"))
+        ball.dx = 0.25
+        ball.dy = 0.25
+        ball.goto(0, 0)
+
     # Left & Right Border
     if ball.xcor() > 390:
         score_a += 1
