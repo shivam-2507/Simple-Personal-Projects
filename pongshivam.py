@@ -1,14 +1,36 @@
+#project in progress                                                                               
 import turtle
-import keyboard
-import time  
+import keyboard  
 
 score_a = 0
 score_b = 0
 wn = turtle.Screen()
-wn.title("Pong by Shivam Walia")  
-wn.bgcolor("#0029B1")  
-wn.setup(width=800, height=600)  
-wn.tracer(0) 
+wn.title("Pong by Shivam Walia")
+wn.bgcolor("#000000")  
+wn.setup(width=800, height=600)
+
+pen1 = turtle.Turtle()
+pen1.speed(0)
+pen1.color('white')
+pen1.penup()
+pen1.hideturtle()
+pen1.goto(0, 0)
+pen1.write("Press K to Start", align="center", font=("Courier", 24, "normal"))  
+
+def start_program():
+    global start
+    start = False
+
+start = True
+while start:
+    wn.update()
+    if keyboard.is_pressed('k'):
+        start_program()
+        wn.tracer(0)
+
+pen1.clear()
+wn.bgcolor("#0029B1")
+wn.update()
 
 paddle_a = turtle.Turtle()
 paddle_a.speed(0)  
@@ -34,17 +56,6 @@ ball.penup()
 ball.goto(0, 0)
 ball.dx = 0.25
 ball.dy = 0.25
-
-#start = turtle.Turtle()
-#start.speed(0)
-#start.color('white')
-#start.penup()
-#start.hideturtle()
-#start.goto(0, 0)
-#start.write("Press Any Key to Start", align="center", font=("Courier", 24, "normal"))
-
-#start.clear()
-
 
 pen = turtle.Turtle()
 pen.speed(0)
@@ -88,8 +99,9 @@ wn.onkeypress(paddle_a_down, "s")
 wn.onkeypress(paddle_b_up, "Up")
 wn.onkeypress(paddle_b_down, "Down")
 
-running = True
+    
 # Main game loop
+running = True
 while running:
     wn.update()
 
@@ -120,6 +132,8 @@ while running:
         ball.dx = 0.25
         ball.dy = 0.25
         ball.goto(0, 0)
+        paddle_a.goto(-350,0)
+        paddle_b.goto(350,0)
 
     # Left & Right Border
     if ball.xcor() > 390:
@@ -148,5 +162,4 @@ while running:
         ball.dx *= -1
 
     if keyboard.is_pressed('esc'):
-        quit_program()
-        
+        quit_program()   
