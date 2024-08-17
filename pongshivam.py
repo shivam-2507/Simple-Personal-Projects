@@ -5,7 +5,6 @@ import keyboard
 # Score variables
 score_a = 0
 score_b = 0
-
 # initializing screen
 wn = turtle.Screen()
 wn.title("Pong by Shivam Walia")
@@ -30,7 +29,7 @@ def start_program():
 start = True
 while start:
     wn.update()
-    if keyboard.is_pressed('k'):
+    if keyboard.is_pressed('K'):
         start_program()
         wn.tracer(0)
 
@@ -184,4 +183,3 @@ while running:
 #    print(f"Ball coordinates: ({ball.xcor()}, {ball.ycor()})")
 #    print(f"Paddle A coordinates: ({paddle_a.xcor()}, {paddle_a.ycor()})")
 #    print(f"Paddle B coordinates: ({paddle_b.xcor()}, {paddle_b.ycor()})")
-# comment1
