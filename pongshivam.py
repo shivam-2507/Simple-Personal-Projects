@@ -184,3 +184,4 @@ while running:
 #    print(f"Ball coordinates: ({ball.xcor()}, {ball.ycor()})")
 #    print(f"Paddle A coordinates: ({paddle_a.xcor()}, {paddle_a.ycor()})")
 #    print(f"Paddle B coordinates: ({paddle_b.xcor()}, {paddle_b.ycor()})")
+# comment1
